@@ -14,9 +14,9 @@ export class HttpService {
     ordering: string,
     search?: string
   ): Observable<APIResponse<Game>> {
-    let params = new HttpParams().set('ordeing', ordering);
+    let params = new HttpParams().set('ordering', ordering);
     if (search) {
-      params: new HttpParams().set('ordeing', ordering).set('search', search);
+      params: new HttpParams().set('ordering', ordering).set('search', search);
     }
     return this.http.get<APIResponse<Game>>(`${env.Base_URL}/games`, {
       params: params,

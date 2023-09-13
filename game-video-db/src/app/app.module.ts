@@ -15,13 +15,15 @@ import { SearchBarComponent } from './component/search-bar/search-bar.component'
 import { HomeComponent } from './component/home/home.component';
 import { HttpErrorsInterceptors } from './interceptors/http-errors-interceptors';
 import { HttpHeadersInterceptors } from './interceptors/http-headers-interceptors';
+import { DetailsComponent } from './component/details/details.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    HomeComponent
+    HomeComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
