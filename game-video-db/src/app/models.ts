@@ -13,8 +13,9 @@ export interface Game {
   screenshots: Array<Screenshots>;
   trailers: Array<Trailer>;
 }
+
 export interface APIResponse<T> {
-  results: Array<T>;
+    results: Array<T>;
 }
 
 interface Genre {
@@ -24,6 +25,7 @@ interface Genre {
 interface ParentPlatform {
   platform: {
     name: string;
+    slug: string;
   };
 }
 
@@ -46,4 +48,3 @@ interface Trailer {
     max: string;
   };
 }
-
