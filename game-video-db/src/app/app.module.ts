@@ -16,6 +16,7 @@ import { HomeComponent } from './component/home/home.component';
 import { HttpErrorsInterceptors } from './interceptors/http-errors-interceptors';
 import { HttpHeadersInterceptors } from './interceptors/http-headers-interceptors';
 import { DetailsComponent } from './component/details/details.component';
+import { GameTabsComponent } from './component/game-tabs/game-tabs.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DetailsComponent } from './component/details/details.component';
     AppComponent,
     SearchBarComponent,
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    GameTabsComponent
   ],
   imports: [
     BrowserModule,

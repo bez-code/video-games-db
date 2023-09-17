@@ -4,15 +4,30 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { APIResponse, Game } from 'src/app/models';
 
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  styleUrls: ['./details.component.scss'],
+  template: `
+    <mwl-gauge
+    class="two"
+            [max]="100"
+            [dialStartAngle]="180"
+            [dialEndAngle]="0"
+            [value]="gameRating"
+            [animated]="true"
+            [color]="getColor"
+            [animationDuration]="2"
+    >
+    </mwl-gauge>
+  `,
 })
+
 export class DetailsComponent implements OnInit {
   gameRating = 0;
   gameId: string;
-  game!: Game;
+  game: Game;
   routeSub: Subscription;
   gameSub: Subscription;
 
@@ -23,6 +38,7 @@ export class DetailsComponent implements OnInit {
     this.gameId = '';
     this.routeSub = new Subscription;
     this.gameSub = new Subscription;
+    this.game = {} as Game;
   }
 
   ngOnInit() {
@@ -33,13 +49,15 @@ export class DetailsComponent implements OnInit {
   }
 
   getGameDetails(id: string): void {
-    this.gameSub = this.HttpService.getGameList(id)
-      .subscribe((response: APIResponse<Game>) => {
-        this.game = response.data;
+    this.gameSub = this.HttpService
+      .getGameDetails(id)
+      .subscribe((gameResp: Game) => {
+        this.game = gameResp;
+
         setTimeout(() => {
           this.gameRating = this.game.metacritic;
         }, 1000);
-      })
+      });
   }
 
   getColor(value: number): string {
