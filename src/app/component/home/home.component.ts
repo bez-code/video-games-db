@@ -34,15 +34,16 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.searchGames('metacrit');
       }
     })
+   
   }
   searchGames(sort: string, search?: string): void {
     this.gameSub = this.httpService
       .getGameList(sort, search)
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
-        console.log(gameList);
       });
   }
+
   openGameDetails(id: string): void {
     this.router.navigate(['details', id]);
   }
@@ -55,5 +56,7 @@ ngOnDestroy(): void {
   this.gameSub.unsubscribe()
  }
 }
-
 }
+
+
+

@@ -28,13 +28,7 @@
   }
 }
 
-.games{
-  display: flex;
- flex-wrap: wrap;
- justify-content: center;
- max-width: 1200px;
- margin: 20 auto;
-}
+// 
 .game{
    width: 280px;
    margin: 10px;
@@ -94,3 +88,12 @@
     margin-right: 10px;
   }
 }
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+

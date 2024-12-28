@@ -47,7 +47,7 @@
         controls
         *ngFor="let trailer of game.trailers"
       >
-        <source src="{{ trailer.data?.max }}" type="video/mp4" />
+        <source src="{{ trailer.data.max }}" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </mat-tab>

@@ -18,15 +18,9 @@
             >{{ genre.name }}<span *ngIf="!last">, </span></span
           >
         </p>
-        <div class="game-gauge">
-          <a
-            class="game-gauge-label"
-            target="_blank"
-            href="{{ game.metacritic_url }}"
-            >metacritic</a
-          >
-        </div>
       </div>
+    </div>
+    <div>
       <app-game-tabs [game]="game"></app-game-tabs>
     </div>
   </div>

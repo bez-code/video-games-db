@@ -45,6 +45,8 @@ export class DetailsComponent implements OnInit {
     this.routeSub = this.ActivatedRoute.params.subscribe((params: Params) => {
       this.gameId = params['id'];
       this.getGameDetails(this.gameId);
+      console.log(this.gameId);
+      
     })
   }
 
@@ -53,6 +55,8 @@ export class DetailsComponent implements OnInit {
       .getGameDetails(id)
       .subscribe((gameResp: Game) => {
         this.game = gameResp;
+        console.log(gameResp);
+        
 
         setTimeout(() => {
           this.gameRating = this.game.metacritic;
